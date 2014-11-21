@@ -31,3 +31,9 @@ class Food(models.Model):
 
     def __unicode__(self):
         return self.name
+
+
+class Order(models.Model):
+    name = models.CharField(verbose_name=u'名称', max_length=40)
+    user = models.OneToOneField(User)
+    food = models.OneToOneField(Food)
