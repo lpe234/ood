@@ -72,4 +72,9 @@ def login(request):
 
 
 def logout(request):
-    return None
+    # 验证是否登陆
+    username = request.session.get('username', None)
+    if not username:
+        return HttpResponse('<a href="{0}">尚未登陆</a>'.format(reverse(login)))
+    del request.session['username']
+    return HttpResponseRedirect(reverse(login))
