@@ -8,13 +8,13 @@ class User(models.Model):
     """
     用户类，姓名、密码、创建时间
     """
-    name = models.CharField(verbose_name=u'姓名', max_length=80)
-    password = models.CharField(verbose_name=u'密码', max_length=20)
+    username = models.CharField(verbose_name=u'姓名', max_length=80)
+    password = models.CharField(verbose_name=u'密码', default='rose123', max_length=20)
     last_login_time = models.DateTimeField(verbose_name=u'最后登录时间', auto_now=True)
     create_time = models.DateTimeField(verbose_name=u'创建时间', auto_now_add=True)
 
     def __unicode__(self):
-        return self.name
+        return self.username
 
     class Meta:
         verbose_name = u'用户'

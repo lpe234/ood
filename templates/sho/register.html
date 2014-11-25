@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head lang="cn">
+    <meta charset="UTF-8">
+    <title>注册</title>
+</head>
+<body>
+<form method="post">{% csrf_token %}
+    {{ form.as_ul }}
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>

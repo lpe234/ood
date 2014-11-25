@@ -4,6 +4,7 @@ __author__ = 'lpe234'
 __date__ = '2014-11-23'
 
 from django import forms
+from models import User
 
 
 class LoginForm(forms.Form):
@@ -11,3 +12,7 @@ class LoginForm(forms.Form):
     password = forms.CharField(label=u'密码', widget=forms.PasswordInput)
     remember = forms.BooleanField(label=u'记住密码', required=False)
 
+
+class RegisterForm(forms.ModelForm):
+    class Meta:
+        model = User

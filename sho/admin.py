@@ -12,7 +12,7 @@ __date__ = '2014-11-22'
 
 
 class UserAdmin(admin.ModelAdmin):
-    list_display = ['name', 'password', 'last_login_time', 'create_time']
+    list_display = ['username', 'password', 'last_login_time', 'create_time']
 
 
 class SellerAdmin(admin.ModelAdmin):
