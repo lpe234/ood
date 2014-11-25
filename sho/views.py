@@ -11,8 +11,6 @@ logger = logging.getLogger(__name__)
 from sho.models import User
 from sho.forms import RegisterForm, LoginForm
 
-import json
-
 # Create your views here.
 
 
@@ -22,6 +20,7 @@ def index(request):
     username = request.session.get('username', None)
     if not username:
         return HttpResponseRedirect(reverse(login))
+    # 获取当前登陆用户信息
     user = User.objects.get(username__exact=username)
     context = {'user': user, }
     return render_to_response('sho/index.html', context)
